@@ -1,0 +1,229 @@
+Microsoft Windows [Version 10.0.19045.4170]
+(c) Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
+
+C:\Users\timur>d:
+
+D:\>cd test
+
+D:\test>git config --global user.name "timurkhaer"
+
+D:\test>git config --global user.email timurkhaer@mail.ru
+
+D:\test>git init
+Initialized empty Git repository in D:/test/.git/
+
+D:\test>git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+
+D:\test>git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        info.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+D:\test>git diff
+
+D:\test>git add info.txt
+
+D:\test>git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   info.txt
+
+
+D:\test>git commit -m "Add the file info.txt"
+[master (root-commit) 4d709fb] Add the file info.txt
+ 1 file changed, 1 insertion(+)
+ create mode 100644 info.txt
+
+D:\test>git diff
+
+D:\test>git log
+commit 4d709fbab69dfd7eea880cd2a578b1ace76244db (HEAD -> master)
+Author: timurkhaer <timurkhaer@mail.ru>
+Date:   Fri Mar 15 16:26:27 2024 +0500
+
+    Add the file info.txt
+
+D:\test>git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        info2.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+D:\test>git add info2.txt
+
+D:\test>git commit -m "info2"
+[master 00f66b2] info2
+ 1 file changed, 1 insertion(+)
+ create mode 100644 info2.txt
+
+D:\test>git log
+commit 00f66b20e7186630f11f3541fb09613af793e76c (HEAD -> master)
+Author: timurkhaer <timurkhaer@mail.ru>
+Date:   Fri Mar 15 16:29:41 2024 +0500
+
+    info2
+
+commit 4d709fbab69dfd7eea880cd2a578b1ace76244db
+Author: timurkhaer <timurkhaer@mail.ru>
+Date:   Fri Mar 15 16:26:27 2024 +0500
+
+    Add the file info.txt
+
+D:\test>git diff
+diff --git a/info2.txt b/info2.txt
+index 070a214..9086d3e 100644
+--- a/info2.txt
++++ b/info2.txt
+@@ -1 +1 @@
+-Information 2
++Information 2: Info
+
+D:\test>git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   info2.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+D:\test>git add info2.txt
+
+D:\test>git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   info2.txt
+
+
+D:\test>git commit -m "info2 - new info"
+[master 705fa63] info2 - new info
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+D:\test>git log
+commit 705fa63378a41d27a4eae38a4c14acd1d76cde3e (HEAD -> master)
+Author: timurkhaer <timurkhaer@mail.ru>
+Date:   Fri Mar 15 16:34:58 2024 +0500
+
+    info2 - new info
+
+commit 00f66b20e7186630f11f3541fb09613af793e76c
+Author: timurkhaer <timurkhaer@mail.ru>
+Date:   Fri Mar 15 16:29:41 2024 +0500
+
+    info2
+
+commit 4d709fbab69dfd7eea880cd2a578b1ace76244db
+Author: timurkhaer <timurkhaer@mail.ru>
+Date:   Fri Mar 15 16:26:27 2024 +0500
+
+    Add the file info.txt
+
+D:\test>git status
+On branch master
+nothing to commit, working tree clean
+
+D:\test>git branch b1
+
+D:\test>git status b1
+On branch master
+nothing to commit, working tree clean
+
+D:\test>git chekcout b1
+git: 'chekcout' is not a git command. See 'git --help'.
+
+The most similar command is
+        checkout
+
+D:\test>git checkout b1
+Switched to branch 'b1'
+
+D:\test>git status
+On branch b1
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        info3.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+D:\test>git add info3.txt
+
+D:\test>git commit -m "info3"
+[b1 7e586de] info3
+ 1 file changed, 1 insertion(+)
+ create mode 100644 info3.txt
+
+D:\test>git log
+commit 7e586de5664d5a6888a8a43a02f8278a1ed6cc85 (HEAD -> b1)
+Author: timurkhaer <timurkhaer@mail.ru>
+Date:   Fri Mar 15 16:38:41 2024 +0500
+
+    info3
+
+commit 705fa63378a41d27a4eae38a4c14acd1d76cde3e (master)
+Author: timurkhaer <timurkhaer@mail.ru>
+Date:   Fri Mar 15 16:34:58 2024 +0500
+
+    info2 - new info
+
+commit 00f66b20e7186630f11f3541fb09613af793e76c
+Author: timurkhaer <timurkhaer@mail.ru>
+Date:   Fri Mar 15 16:29:41 2024 +0500
+
+    info2
+
+commit 4d709fbab69dfd7eea880cd2a578b1ace76244db
+Author: timurkhaer <timurkhaer@mail.ru>
+Date:   Fri Mar 15 16:26:27 2024 +0500
+
+    Add the file info.txt
+
+D:\test>git checkout master
+Switched to branch 'master'
+
+D:\test>git merge b1
+Updating 705fa63..7e586de
+Fast-forward
+ info3.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 info3.txt
+
+D:\test>git status
+On branch master
+nothing to commit, working tree clean
+
+D:\test>git log
+commit 7e586de5664d5a6888a8a43a02f8278a1ed6cc85 (HEAD -> master, b1)
+Author: timurkhaer <timurkhaer@mail.ru>
+Date:   Fri Mar 15 16:38:41 2024 +0500
+
+    info3
+
+commit 705fa63378a41d27a4eae38a4c14acd1d76cde3e
+Author: timurkhaer <timurkhaer@mail.ru>
+Date:   Fri Mar 15 16:34:58 2024 +0500
+
+    info2 - new info
+
+commit 00f66b20e7186630f11f3541fb09613af793e76c
+Author: timurkhaer <timurkhaer@mail.ru>
+Date:   Fri Mar 15 16:29:41 2024 +0500
+
+    info2

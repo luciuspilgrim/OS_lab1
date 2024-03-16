@@ -1,0 +1,88 @@
+Microsoft Windows [Version 10.0.19045.4170]
+(c) Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
+
+C:\Users\timur>d:
+
+D:\>git clone https://github.com/luciuspilgrim/test_2.git
+Cloning into 'test_2'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (3/3), done.
+
+D:\>git log
+fatal: not a git repository (or any of the parent directories): .git
+
+D:\>cd test_2
+
+D:\test_2>git log
+commit dec15c35bae8162c2ad5d0f0c4414745ee1f35ce (HEAD -> main, origin/main, origin/HEAD)
+Author: luciuspilgrim <163533596+luciuspilgrim@users.noreply.github.com>
+Date:   Sat Mar 16 15:35:43 2024 +0500
+
+    Update text of README
+
+D:\test_2>git remote add github https://github.com/luciuspilgrim/test_2.git
+
+D:\test_2>git remote -v
+github  https://github.com/luciuspilgrim/test_2.git (fetch)
+github  https://github.com/luciuspilgrim/test_2.git (push)
+origin  https://github.com/luciuspilgrim/test_2.git (fetch)
+origin  https://github.com/luciuspilgrim/test_2.git (push)
+
+D:\test_2>git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        info.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+D:\test_2>git add info.txt
+
+D:\test_2>git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   info.txt
+
+
+D:\test_2>git commit -m "Add info.txt"
+[main a199e71] Add info.txt
+ 1 file changed, 1 insertion(+)
+ create mode 100644 info.txt
+
+D:\test_2>git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+D:\test_2>git log
+commit a199e712e484b1c40f71cb81cbc6e9d32e8b26e0 (HEAD -> main)
+Author: timurkhaer <timurkhaer@mail.ru>
+Date:   Sat Mar 16 15:55:02 2024 +0500
+
+    Add info.txt
+
+commit dec15c35bae8162c2ad5d0f0c4414745ee1f35ce (origin/main, origin/HEAD)
+Author: luciuspilgrim <163533596+luciuspilgrim@users.noreply.github.com>
+Date:   Sat Mar 16 15:35:43 2024 +0500
+
+    Update text of README
+
+D:\test_2>git push -u github main
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 292 bytes | 146.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/luciuspilgrim/test_2.git
+   dec15c3..a199e71  main -> main
+branch 'main' set up to track 'github/main'.
